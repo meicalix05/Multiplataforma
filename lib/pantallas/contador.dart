@@ -31,7 +31,14 @@ class _contadorState extends State<contador> {
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          
+          FloatingActionButton(
+            onPressed: () {
+              clickcontador = 0;
+              setState(() {});
+            },
+            child: Icon(Icons.refresh_rounded),
+          ),
+          SizedBox(height: 300),
           FloatingActionButton(
             onPressed: () {
               if (clickcontador == 0) return;
@@ -40,7 +47,7 @@ class _contadorState extends State<contador> {
             },
             child: Icon(Icons.exposure_minus_1),
           ),
-          SizedBox(height: 40,), 
+          SizedBox(height: 20,), 
           FloatingActionButton(
             onPressed: () {
               clickcontador++;
