@@ -27,13 +27,29 @@ class _contadorState extends State<contador> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          clickcontador++;
-          setState(() {});
-        },
-        child: Icon(Icons.plus_one),
-      ),
-    );
-  }
+
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          
+          FloatingActionButton(
+            onPressed: () {
+              if (clickcontador == 0) return;
+              clickcontador--;
+              setState(() {});
+            },
+            child: Icon(Icons.exposure_minus_1),
+          ),
+          SizedBox(height: 40,), 
+          FloatingActionButton(
+            onPressed: () {
+              clickcontador++;
+              setState(() {});
+            },
+            child: Icon(Icons.plus_one),
+          ),
+        ],
+     ),
+);
+}
 }
